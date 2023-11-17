@@ -11,7 +11,7 @@ public class NoKnifeDamagePRG : BasePlugin
 {
     public override string ModuleAuthor => "sphaxa";
     public override string ModuleName => "NoKnifeDamage for PRG";
-    public override string ModuleVersion => "v0.0.1";
+    public override string ModuleVersion => "v1.0.1";
 
     public override void Load(bool hotReload)
     {
@@ -41,10 +41,6 @@ public class NoKnifeDamagePRG : BasePlugin
 
         if (@event.Weapon == "knife")
         {
-            //@event.Health = @event.Health + @event.DmgHealth;
-            //@event.Armor = @event.Armor + @event.DmgArmor;
-            //@event.DmgArmor = 0;
-            //@event.DmgHealth = 0;
             if (@event.Userid.PlayerPawn.Value.Health + @event.DmgHealth <= 100)
             {
                 @event.Userid.PlayerPawn.Value.Health = @event.Userid.PlayerPawn.Value.Health + @event.DmgHealth;
@@ -52,8 +48,9 @@ public class NoKnifeDamagePRG : BasePlugin
             {
                 @event.Userid.PlayerPawn.Value.Health = 100;
             }
-            // TODO INVESTIGATE SLOWDOWN
         }
+
+        @event.Userid.PlayerPawn.Value.VelocityModifier = 1;
 
         return HookResult.Continue;
     }
