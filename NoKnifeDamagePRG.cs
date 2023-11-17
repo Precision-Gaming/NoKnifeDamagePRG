@@ -37,8 +37,6 @@ public class NoKnifeDamagePRG : BasePlugin
             return HookResult.Continue;
         }
 
-        Console.WriteLine(@event.Weapon);
-
         if (@event.Weapon == "knife")
         {
             if (@event.Userid.PlayerPawn.Value.Health + @event.DmgHealth <= 100)
