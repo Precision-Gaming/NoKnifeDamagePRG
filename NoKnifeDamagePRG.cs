@@ -11,7 +11,7 @@ public class NoKnifeDamagePRG : BasePlugin
 {
     public override string ModuleAuthor => "sphaxa";
     public override string ModuleName => "NoKnifeDamage for PRG";
-    public override string ModuleVersion => "v1.0.1";
+    public override string ModuleVersion => "v1.0.2";
 
     public override void Load(bool hotReload)
     {
